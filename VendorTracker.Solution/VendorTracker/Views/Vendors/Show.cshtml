@@ -16,9 +16,13 @@ else
   <ul id="orderList">
     @foreach (Order order in Model["orders"])
     {
-      <li>
-        @order.Title
-      </li>
+      <li>@order.Title</li>
+      <ul>
+        <li>Order Description: @order.Description</li>
+        <li>Quantity: @order.Quantity</li>
+        <li>Price: $@order.Price</li>
+        <li>Requested Delivery Date: @order.DeliveryDate.ToShortDateString()</li>
+      </ul>
     }
   </ul>
 }
