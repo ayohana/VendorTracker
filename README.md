@@ -6,14 +6,14 @@
 
 ## Description
 
-**This application is for Della's Bakery to help keep track of their vendors and purchases belonging to those vendors.** For example, Della supplies croissants to a vendor called Suzie's Cafe weekly. Della will be able to enter _"Suzie's Cafe"_ as a vendor and their order of _"croissants"_ to help keep track of Della's expanding business relationships.
+**This application is for Della's Bakery to help keep track of their vendors and orders of baked goods belonging to those vendors.** For example, Della supplies croissants to a vendor called Suzie's Cafe weekly. Della will be able to enter _"Suzie's Cafe"_ as a vendor and their order of _"croissants"_ to help keep track of Della's expanding business relationships.
 
 ## User Stories
 
 * As a bakery owner, I want to be able to enter my vendors so that I can keep track of all my clients.
 * As a bakery owner, I want to be able to click on each vendor so that I can see each of their description in detail.
-* As a bakery owner, I want to be able to enter purchases belonging to vendors so that I can keep track of my clients' demands.
-* As a bakery owner, I want to be able to see all the purchases belonging to a vendor so that I can prepare what I need to bake ahead of time.
+* As a bakery owner, I want to be able to enter orders belonging to vendors so that I can keep track of my clients' demands.
+* As a bakery owner, I want to be able to see all the orders belonging to a vendor so that I can prepare what I need to bake ahead of time.
 * As a developer, I want to see a splash page with a sweet welcome message so that I can welcome the bakery owner to their application.
 
 ## HTTP Routes using RESTful convention
