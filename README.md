@@ -24,7 +24,7 @@
 | `Vendors:` Index | /vendors | GET | Displays list of all vendors |
 | `Vendors:` New | /vendors/new | GET | Offers form to create a new vendor |
 | `Vendors:` Create | /vendors | POST | Creates a new vendor on server |
-| `Vendors:` Show | /vendors/{vendorID} | GET | Displays one specific vendor's details |
+| `Vendors:` Show | /vendors/{vendorID} | GET | Displays one specific vendor's details including a list of all orders associated to the vendor |
 | `Vendors:` Create | /vendors/{vendorID}/orders | POST | Creates a new order within one specific vendor |
 | `Orders:` New | /vendors/{vendorID}/orders/new | GET | Offers form to create a new order within one specific vendor |
 | `Orders:` Show | /vendors/{vendorID}/orders/{orderID} | GET | Displays one specific order's details within one specific vendor |

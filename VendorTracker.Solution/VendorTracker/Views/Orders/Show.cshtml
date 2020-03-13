@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+<h4>@Model["orders"].Title Order for @Model["vendor"].Name:</h4>
+<ul>
+  <li>Order Description: @Model["orders"].Description</li>
+  <li>Quantity: @Model["orders"].Quantity</li>
+  <li>Price: $@Model["orders"].Price</li>
+  <li>Requested Delivery Date: @Model["orders"].DeliveryDate.ToShortDateString()</li>
+</ul>
+
+<a href='/vendors/@Model["vendor"].ID'>Back to list of orders for @Model["vendor"].Name</a>

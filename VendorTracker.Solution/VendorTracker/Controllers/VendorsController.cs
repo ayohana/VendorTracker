@@ -31,9 +31,9 @@ namespace VendorTracker.Controllers
     [HttpGet("/vendors/{vendorID}")]
     public ActionResult Show(int vendorID)
     {
-      Dictionary<string, object> model = new Dictionary<string, object> ();
       Vendor selectedVendor = Vendor.Find(vendorID);
       List<Order> selectedOrderList = selectedVendor.Orders;
+      Dictionary<string, object> model = new Dictionary<string, object> ();
       model.Add("vendor", selectedVendor);
       model.Add("orders", selectedOrderList);
       return View(model);
@@ -42,11 +42,11 @@ namespace VendorTracker.Controllers
     [HttpPost("/vendors/{vendorID}/orders")]
     public ActionResult Create(int vendorID, string orderTitle, string orderDescription, int orderQuantity, int orderPrice, DateTime orderDeliveryDate)
     {
-      Dictionary<string, object> model = new Dictionary<string, object> ();
       Vendor foundVendor = Vendor.Find(vendorID);
       Order newOrder = new Order(orderTitle, orderDescription, orderQuantity, orderPrice, orderDeliveryDate);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
+      Dictionary<string, object> model = new Dictionary<string, object> ();
       model.Add("vendor", foundVendor);
       model.Add("orders", vendorOrders);
       return View("Show", model);

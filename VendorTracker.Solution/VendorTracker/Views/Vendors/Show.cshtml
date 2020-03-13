@@ -3,8 +3,8 @@
   Layout = "_Layout";
 }
 
-<h4>@Model["vendor"].Name</h4>
-<h5>About: @Model["vendor"].Description</h4>
+<h3>@Model["vendor"].Name</h3>
+<h4>Description: @Model["vendor"].Description</h4>
 
 @if (Model["orders"].Count == 0)
 {
@@ -12,17 +12,13 @@
 }
 else
 {
-  <h5>List of orders:</h5>
+  <h4>List of all orders for @Model["vendor"].Name:</h4>
   <ul id="orderList">
     @foreach (Order order in Model["orders"])
     {
-      <li>@order.Title</li>
-      <ul>
-        <li>Order Description: @order.Description</li>
-        <li>Quantity: @order.Quantity</li>
-        <li>Price: $@order.Price</li>
-        <li>Requested Delivery Date: @order.DeliveryDate.ToShortDateString()</li>
-      </ul>
+      <li>
+        <a href='/vendors/@Model["vendor"].ID/orders/@order.ID'>@order.Title</a>
+      </li>
     }
   </ul>
 }
