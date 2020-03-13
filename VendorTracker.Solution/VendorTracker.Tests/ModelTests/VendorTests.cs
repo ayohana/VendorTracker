@@ -13,14 +13,15 @@ namespace VendorTracker.Tests
     {
       Vendor.ClearAll();
     }
-
+    
     [TestMethod]
     public void VendorConstructor_CreateInstanceOfVendor_Vendor()
     {
       Vendor newVendor = new Vendor("test name", "test description");
-      Assert.AreEqual(typeof(newVendor), newVendor.GetType());
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
+    [Ignore]
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
@@ -32,6 +33,7 @@ namespace VendorTracker.Tests
       Assert.AreEqual(name, result);
     }
 
+    [Ignore]
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
@@ -43,6 +45,7 @@ namespace VendorTracker.Tests
       Assert.AreEqual(description, result);
     }
 
+    [Ignore]
     [TestMethod]
     public void GetAll_ReturnsAllVendors_VendorList()
     {
@@ -55,6 +58,7 @@ namespace VendorTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [Ignore]
     [TestMethod]
     public void GetID_ReturnsVendorID_Int()
     {
@@ -63,6 +67,7 @@ namespace VendorTracker.Tests
       Assert.AreEqual(1, result);
     }
 
+    [Ignore]
     [TestMethod]
     public void Find_ReturnsCorrectVendor_Vendor()
     {
@@ -74,16 +79,24 @@ namespace VendorTracker.Tests
       Assert.AreEqual(newVendor2, result);
     }
 
+    [Ignore]
     [TestMethod]
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
-      // Vendor newVendor1 = new Vendor("Suzie's Cafe", "Grandma Suzie sells coffee and yummy sweets.");
-      // Vendor newVendor2 = new Vendor("Pierre's Bakery", "Pierre sells amazing organic French baguettes.");
-      // List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
-  
-      // List<Vendor> result = Vendor.GetAll();
+      string title1 = "One-time purchase";
+      string description1 = "croissants";
+      int quantity1 = 20;
+      int price1 = 40;
+      DateTime deliveryDate1 = new DateTime(2020, 5, 15);
+      Order newOrder1 = new Order(title1, description1, quantity1, price1, deliveryDate1);
+      List<Order> newOrderList = new List<Order> { newOrder1 };
 
-      // CollectionAssert.AreEqual(newList, result);
+      Vendor newVendor1 = new Vendor("Suzie's Cafe", "Grandma Suzie sells coffee and yummy sweets.");
+      newVendor1.AddOrder(newOrder1);
+  
+      List<Order> result = newVendor1.Orders;
+
+      CollectionAssert.AreEqual(newOrderList, result);
     }
   }
 }
