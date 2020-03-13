@@ -16,6 +16,19 @@
 * As a bakery owner, I want to be able to see all the purchases belonging to a vendor so that I can prepare what I need to bake ahead of time.
 * As a developer, I want to see a splash page with a sweet welcome message so that I can welcome the bakery owner to their application.
 
+## HTTP Routes using RESTful convention
+
+| Route Name | URL Path | HTTP Method | Purpose |
+| :--------- | :------- | :---------- | :------ |
+| `Home:` Index | / | GET | `Homepage:` Displays splash page |
+| `Vendors:` Index | /vendors | GET | Displays list of all vendors |
+| `Vendors:` New | /vendors/new | GET | Offers form to create a new vendor |
+| `Vendors:` Create | /vendors | POST | Creates a new vendor on server |
+| `Vendors:` Show | /vendors/{vendorID} | GET | Displays one specific vendor's details |
+| `Orders:` New | /vendors/{vendorID}/orders/new | GET | Offers form to create a new order within one specific vendor |
+| `Orders:` Create | /vendors/{vendorID}/orders | POST | Creates a new order within one specific vendor |
+| `Orders:` Show | /vendors/{vendorID}/orders/{orderID} | GET | Displays one specific order's details within one specific vendor |
+
 ## Setup/Installation Requirements
 
 * Download [.NET Core](https://dotnet.microsoft.com/download/dotnet-core/)
