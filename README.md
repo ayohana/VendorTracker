@@ -25,8 +25,8 @@
 | `Vendors:` New | /vendors/new | GET | Offers form to create a new vendor |
 | `Vendors:` Create | /vendors | POST | Creates a new vendor on server |
 | `Vendors:` Show | /vendors/{vendorID} | GET | Displays one specific vendor's details |
+| `Vendors:` Create | /vendors/{vendorID}/orders | POST | Creates a new order within one specific vendor |
 | `Orders:` New | /vendors/{vendorID}/orders/new | GET | Offers form to create a new order within one specific vendor |
-| `Orders:` Create | /vendors/{vendorID}/orders | POST | Creates a new order within one specific vendor |
 | `Orders:` Show | /vendors/{vendorID}/orders/{orderID} | GET | Displays one specific order's details within one specific vendor |
 
 ## Setup/Installation Requirements
