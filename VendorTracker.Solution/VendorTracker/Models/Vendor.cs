@@ -14,12 +14,16 @@ namespace VendorTracker.Models
 
     public Vendor(string name, string description)
     {
+      Name = name;
+      Description = description;
       Orders = new List<Order> { };
+      _allVendors.Add(this);
+      ID = _allVendors.Count;
     }
 
     public static void ClearAll()
     {
-
+      _allVendors.Clear();
     }
 
     public static List<Vendor> GetAll()

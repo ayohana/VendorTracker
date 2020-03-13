@@ -21,7 +21,6 @@ namespace VendorTracker.Tests
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
-    [Ignore]
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
@@ -33,7 +32,6 @@ namespace VendorTracker.Tests
       Assert.AreEqual(name, result);
     }
 
-    [Ignore]
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
@@ -43,6 +41,16 @@ namespace VendorTracker.Tests
       string result = newVendor.Description;
 
       Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void GetID_ReturnsVendorID_Int()
+    {
+      Vendor newVendor = new Vendor("Suzie's Cafe", "Grandma Suzie sells coffee and yummy sweets.");
+
+      int result = newVendor.ID;
+      
+      Assert.AreEqual(1, result);
     }
 
     [Ignore]
@@ -56,15 +64,6 @@ namespace VendorTracker.Tests
       List<Vendor> result = Vendor.GetAll();
 
       CollectionAssert.AreEqual(newList, result);
-    }
-
-    [Ignore]
-    [TestMethod]
-    public void GetID_ReturnsVendorID_Int()
-    {
-      Vendor newVendor = new Vendor("Suzie's Cafe", "Grandma Suzie sells coffee and yummy sweets.");
-      int result = newVendor.ID;
-      Assert.AreEqual(1, result);
     }
 
     [Ignore]
