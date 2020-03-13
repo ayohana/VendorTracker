@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using VendorTracker.Models;
 using System.Collections.Generic;
 
-namespace ProjectName.Controllers
+namespace VendorTracker.Controllers
 {
-  public class ClassesNameController : Controller
+  public class VendorsController : Controller
   {
 
     // [HttpGet("/classesname")]

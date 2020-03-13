@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProjectName.Models
+namespace VendorTracker.Models
 {
-  public class ClassName
+  public class Vendor
   {
     // Back-end code goes here
   }
