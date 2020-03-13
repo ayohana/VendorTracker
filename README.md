@@ -1,4 +1,4 @@
-# [Vendor Tracker for Della's Bakery](https://github.com/ayohana/my-bakery-mvc.git/)
+# [Vendor Tracker for Della's Bakery](https://github.com/ayohana/VendorTracker.git/)
 
 #### C# Basic Web Applications Exercise for [Epicodus](https://www.epicodus.com/), 03.13.2020
 
@@ -19,7 +19,7 @@
 ## Setup/Installation Requirements
 
 * Download [.NET Core](https://dotnet.microsoft.com/download/dotnet-core/)
-* Clone this [repository](https://github.com/ayohana/anagram.git/)
+* Clone this [repository](https://github.com/ayohana/VendorTracker.git)
 * Open the `Command Line Interface`.
   * Navigate into the `VendorTracker` directory.
     * Type in the command `dotnet restore` to gather tools and dependencies for the application.
