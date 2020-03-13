@@ -7,10 +7,38 @@ namespace VendorTracker.Tests
   public class VendorTests
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void VendorConstructor_CreateInstanceOfVendor_Vendor()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      Vendor newVendor = new Vendor();
+      Assert.AreEqual(typeof(newVendor), newVendor.GetType());
+    }
+
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      string name = "Suzie's Cafe";
+      Vendor newVendor = new Vendor(name);
+      string result = newVendor.Name;
+      Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string name = "Suzie's Cafe";
+      string description = "Grandma Suzie sells coffee and yummy sweets.";
+      Vendor newVendor = new Vendor(name, description);
+      string result = newVendor.Name;
+      Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void GetID_ReturnsVendorID_Int()
+    {
+      string name = "Suzie's Cafe";
+      Vendor newVendor = new Vendor(name);
+      int result = newVendor.ID;
+      Assert.AreEqual(1, result);
     }
   }
 }

@@ -5,6 +5,9 @@ namespace VendorTracker.Models
 {
   public class Vendor
   {
-    // Back-end code goes here
+    public Vendor()
+    {
+      
+    }
   }
 }
