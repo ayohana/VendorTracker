@@ -2,4 +2,10 @@
   Layout = "_Layout";
 }
 
-@* Razor code goes here *@
+<form action="/vendors" method="post">
+  <label for="vendorName">Vendor's Name:</label>
+  <input type="text" name="vendorName" id="vendorName">
+  <label for="vendorDescription">Describe Vendor:</label>
+  <input type="text" name="vendorDescription" id="vendorDescription">
+  <button type="submit">Add new vendor</button>
+</form>
