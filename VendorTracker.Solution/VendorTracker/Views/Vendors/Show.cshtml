@@ -1,0 +1,24 @@
+@using VendorTracker.Models;
+@{
+  Layout = "_Layout";
+}
+
+<h4>@Model["vendor"].Name</h4>
+<h5>@Model["vendor"].Description</h4>
+
+@if (Model["orders"].Count == 0)
+{
+  <p>This vendor currently does not have any orders.</p>
+}
+else
+{
+  <h5>List of orders:</h5>
+  <ul>
+    @foreach (Order order in Model["orders"])
+    {
+      <li>
+        @order.Title
+      </li>
+    }
+  </ul>
+}
