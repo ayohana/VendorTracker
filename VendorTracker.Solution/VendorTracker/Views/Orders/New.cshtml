@@ -2,4 +2,19 @@
   Layout = "_Layout";
 }
 
-@* Razor code goes here *@
+<h4>Add a new order to @Model.Name</h4>
+
+<form action="/vendors/@Model.ID/orders" method="post">
+  <input id="vendorID" name="vendorID" type="hidden" value="@Model.ID">
+  <label for="orderTitle">Title of Order:</label>
+  <input type="text" name="orderTitle" id="orderTitle">
+  <label for="orderDescription">Describe Order:</label>
+  <input type="text" name="orderDescription" id="orderDescription">
+  <label for="orderQuantity">Quantity of Order:</label>
+  <input type="number" name="orderQuantity" id="orderQuantity">
+  <label for="orderPrice">Price of Order:</label>
+  <input type="number" name="orderPrice" id="orderPrice">
+  <label for="orderDeliveryDate">Enter Date of Delivery:</label>
+  <input type="date" name="orderDeliveryDate" id="orderDeliveryDate">
+  <button type="submit">Add new order</button>
+</form>
