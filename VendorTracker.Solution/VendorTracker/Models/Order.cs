@@ -5,7 +5,6 @@ namespace VendorTracker.Models
 {
   public class Order
   {
-
     public string Title { get; set; }
     public string Description { get; set; }
     public int Quantity { get; set; }
@@ -16,12 +15,18 @@ namespace VendorTracker.Models
 
     public Order(string title, string description, int quantity, int price, DateTime deliveryDate)
     {
-      
+      Title = title;
+      Description = description;
+      Quantity = quantity;
+      Price = price;
+      DeliveryDate = deliveryDate;
+      _allOrders.Add(this);
+      ID = _allOrders.Count;
     }
 
     public static void ClearAll()
     {
-
+      _allOrders.Clear();
     }
 
     public static List<Order> GetAll()
@@ -29,10 +34,9 @@ namespace VendorTracker.Models
       return _allOrders;
     }
 
-    public static Order Find(int id)
+    public static Order Find(int searchID)
     {
-      Order orderFound = new Order("test", "test", 1, 1, new DateTime(2020, 1, 1));
-      return orderFound;
+      return _allOrders[searchID-1];
     }
   }
 }

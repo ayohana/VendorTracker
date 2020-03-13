@@ -86,7 +86,6 @@ namespace VendorTracker.Tests
       DateTime deliveryDate1 = new DateTime(2020, 5, 15);
       Order newOrder1 = new Order(title1, description1, quantity1, price1, deliveryDate1);
       List<Order> newOrderList = new List<Order> { newOrder1 };
-
       Vendor newVendor1 = new Vendor("Suzie's Cafe", "Grandma Suzie sells coffee and yummy sweets.");
       newVendor1.AddOrder(newOrder1);
   
@@ -94,5 +93,6 @@ namespace VendorTracker.Tests
 
       CollectionAssert.AreEqual(newOrderList, result);
     }
+    
   }
 }
