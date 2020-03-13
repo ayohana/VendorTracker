@@ -53,7 +53,6 @@ namespace VendorTracker.Tests
       Assert.AreEqual(1, result);
     }
 
-    [Ignore]
     [TestMethod]
     public void GetAll_ReturnsAllVendors_VendorList()
     {
@@ -66,7 +65,6 @@ namespace VendorTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    [Ignore]
     [TestMethod]
     public void Find_ReturnsCorrectVendor_Vendor()
     {
@@ -78,7 +76,6 @@ namespace VendorTracker.Tests
       Assert.AreEqual(newVendor2, result);
     }
 
-    [Ignore]
     [TestMethod]
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {

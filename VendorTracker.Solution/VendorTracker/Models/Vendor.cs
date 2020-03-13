@@ -31,15 +31,14 @@ namespace VendorTracker.Models
       return _allVendors;
     }
 
-    public static Vendor Find(int id)
+    public static Vendor Find(int searchID)
     {
-      Vendor found = new Vendor("test", "test");
-      return found;
+      return _allVendors[searchID-1];
     }
 
     public void AddOrder(Order order)
     {
-
+      Orders.Add(order);
     }
 
   }
