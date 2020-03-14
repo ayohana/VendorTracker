@@ -1,3 +1,4 @@
-img#top-floral-banner {
-  max-width: 10%;
+body {
+  background-image: url('../img/bread-lg-bg.jpg');
+  background-size: cover;
 }
