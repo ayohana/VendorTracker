@@ -8,6 +8,32 @@
 
 **This application is for Della's Bakery to help keep track of their vendors and orders of baked goods belonging to those vendors.** For example, Della supplies croissants to a vendor called Suzie's Cafe weekly. Della will be able to enter _"Suzie's Cafe"_ as a vendor and their order of _"croissants"_ to help keep track of Della's expanding business relationships.
 
+## Screenshots
+
+#### Homepage of Vendor Tracker:
+
+![Screenshot of Homepage](./Screenshots/Homepage.JPG/)
+
+#### Form to Add a Vendor:
+
+![Screenshot of Form to Add a Vendor](./Screenshots/FormAddVendor.JPG/)
+
+#### Form to Add an Order to a Vendor:
+
+![Screenshot of Form to Add an Order](./Screenshots/FormAddOrder.JPG/)
+
+#### List of Vendors:
+
+![Screenshot of List of Vendors](./Screenshots/ListVendors.JPG/)
+
+#### List of Orders Belonging to a Vendor:
+
+![Screenshot of List of Orders belonging to a Vendor](./Screenshots/ListOrders.JPG/)
+
+#### Details of an Order:
+
+![Screenshot of Vendor's Details](./Screenshots/DetailsOrder.JPG/)
+
 ## User Stories
 
 * As a bakery owner, I want to be able to enter my vendors so that I can keep track of all my clients.
