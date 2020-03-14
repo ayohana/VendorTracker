@@ -7,7 +7,7 @@
 <form action="/vendors/@Model.ID/orders" method="post">
   <input id="vendorID" name="vendorID" type="hidden" value="@Model.ID">
   <label for="orderTitle">Title of Order:</label>
-  <input type="text" name="orderTitle" id="orderTitle">
+  <input type="text" name="orderTitle" id="orderTitle" required>
   <label for="orderDescription">Describe Order:</label>
   <input type="text" name="orderDescription" id="orderDescription">
   <label for="orderQuantity">Quantity of Order:</label>
