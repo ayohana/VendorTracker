@@ -1,14 +1,13 @@
 body {
   background-image: url('../img/bread-lg-bg.jpg');
   background-size: cover;
-  color: rgb(218, 216, 216);
+  color: white;
 }
 
 h1 {
   font-family: 'Fredericka the Great', cursive;
   font-size: 40pt;
   font-weight: 400;
-  color: white;
 }
 
 h4 {
@@ -18,7 +17,6 @@ h4 {
 h3 {
   font-family: 'Fredericka the Great', cursive;
   font-size: 30pt;
-  color: white;
 }
 
 a {
@@ -28,6 +26,7 @@ a {
   padding: 2px;
   display: inline-block;
   position: relative;
+  margin-inline-end: 15px;
 }
 
 a:hover {
@@ -35,13 +34,20 @@ a:hover {
 }
 
 li {
-  list-style: none;
+  list-style-type: none;
+  text-align: center;
+  margin-right: 30px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .button {
   font-family: 'Amatic SC', cursive;
   color: white;
-  border-radius: 4%;
+  border-radius: 4px;
   background-color: rgb(90, 122, 41);
   border: none;
   padding: 5px;
