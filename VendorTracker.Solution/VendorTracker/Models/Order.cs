@@ -13,6 +13,11 @@ namespace VendorTracker.Models
     public DateTime DeliveryDate { get; set; }
     public int ID { get; }
 
+    public Order(string title)
+    {
+      Title = title;
+    }
+
     public Order(string title, string description, int quantity, int price, DateTime deliveryDate)
     {
       Title = title;
@@ -30,6 +35,20 @@ namespace VendorTracker.Models
       Quantity = quantity;
       Price = price;
       DeliveryDate = deliveryDate;
+    }
+
+    public override bool Equals(System.Object otherOrder)
+    {
+      if (!(otherOrder is Order))
+      {
+        return false;
+      }
+      else
+      {
+        Order newOrder = (Order) otherOrder;
+        bool titleEquality = (this.Title == newOrder.Title);
+        return titleEquality;
+      }
     }
 
     public static void ClearAll()

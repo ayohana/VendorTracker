@@ -134,6 +134,14 @@ namespace VendorTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void Equals_ReturnsTrueIfTitlesAreTheSame_Order()
+    {
+      Order firstOrder = new Order("Bulk Croissants");
+      Order secondOrder = new Order("Bulk Croissants");
+      Assert.AreEqual(firstOrder, secondOrder);
+    }
+
     [Ignore]
     [TestMethod]
     public void Find_ReturnsCorrectOrder_Order()
