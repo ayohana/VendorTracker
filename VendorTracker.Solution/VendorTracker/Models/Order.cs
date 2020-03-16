@@ -34,7 +34,16 @@ namespace VendorTracker.Models
 
     public static void ClearAll()
     {
-      // add code connected to database here
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM orders;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
     }
 
     public static List<Order> GetAll()

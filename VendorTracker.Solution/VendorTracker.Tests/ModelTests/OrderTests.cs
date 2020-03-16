@@ -18,7 +18,7 @@ namespace VendorTracker.Tests
     public OrderTests()
     {
       // Created to override our config set in Startup.cs to ensure connection to our test database
-      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=vendor_tracker_database_test"
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=vendor_tracker_database_test";
     }
 
     [TestMethod]

@@ -2,7 +2,7 @@ using System;
 using MySql.Data.MySqlClient;
 using VendorTracker;
 
-namespace VendorTracker.Models;
+namespace VendorTracker.Models
 {
   public class DB
   {
