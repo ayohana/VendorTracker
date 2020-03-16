@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MySql.Data.MySqlClient;
 using VendorTracker.Models;
 
 namespace VendorTracker.Tests
@@ -12,6 +13,12 @@ namespace VendorTracker.Tests
     public void Dispose()
     {
       Order.ClearAll();
+    }
+
+    public OrderTests()
+    {
+      // Created to override our config set in Startup.cs to ensure connection to our test database
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=vendor_tracker_database_test"
     }
 
     [TestMethod]
