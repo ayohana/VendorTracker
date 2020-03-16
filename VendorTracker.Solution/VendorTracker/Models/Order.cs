@@ -51,6 +51,43 @@ namespace VendorTracker.Models
       }
     }
 
+    public void Save()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+
+      cmd.CommandText = @"INSERT INTO orders (title, description, quantity, price, deliveryDate) VALUES (@OrderTitle, @OrderDescription, @OrderQuantity, @OrderPrice, @OrderDeliveryDate);";
+
+      MySqlParameter title = new MySqlParameter();
+      title.ParameterName = "@OrderTitle";
+      title.Value = this.Title;
+      cmd.Parameters.Add(title);
+      MySqlParameter description = new MySqlParameter();
+      description.ParameterName = "@OrderDescription";
+      description.Value = this.Description;
+      cmd.Parameters.Add(description);
+      MySqlParameter quantity = new MySqlParameter();
+      quantity.ParameterName = "@OrderQuantity";
+      quantity.Value = this.Quantity;
+      cmd.Parameters.Add(quantity);
+      MySqlParameter price = new MySqlParameter();
+      price.ParameterName = "@OrderPrice";
+      price.Value = this.Price;
+      cmd.Parameters.Add(price);
+      MySqlParameter deliveryDate = new MySqlParameter();
+      deliveryDate.ParameterName = "@OrderDeliveryDate";
+      deliveryDate.Value = this.DeliveryDate;
+      cmd.Parameters.Add(deliveryDate);
+      cmd.ExecuteNonQuery();
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
     public static void ClearAll()
     {
       MySqlConnection conn = DB.Connection();

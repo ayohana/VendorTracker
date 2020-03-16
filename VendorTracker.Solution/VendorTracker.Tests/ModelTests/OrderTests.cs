@@ -139,7 +139,20 @@ namespace VendorTracker.Tests
     {
       Order firstOrder = new Order("Bulk Croissants");
       Order secondOrder = new Order("Bulk Croissants");
+
       Assert.AreEqual(firstOrder, secondOrder);
+    }
+
+    [TestMethod]
+    public void Save_SavesToDatabase_OrderList()
+    {
+      Order newOrder = new Order("Bulk Croissants", "Chocolate croissants", 40, 60, new DateTime(2020, 4, 1));
+      newOrder.Save();
+      List<Order> newList = new List<Order> { newOrder };
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
     }
 
     [Ignore]
