@@ -11,7 +11,7 @@ namespace VendorTracker.Models
     public int Quantity { get; set; }
     public int Price { get; set; }
     public DateTime DeliveryDate { get; set; }
-    public int ID { get; }
+    public int ID { get; set; }
 
     public Order(string title)
     {
@@ -46,8 +46,13 @@ namespace VendorTracker.Models
       else
       {
         Order newOrder = (Order) otherOrder;
+        bool idEquality = (this.ID == newOrder.ID);
         bool titleEquality = (this.Title == newOrder.Title);
-        return titleEquality;
+        bool descriptionEquality = (this.Description == newOrder.Description);
+        bool quantityEquality = (this.Quantity == newOrder.Quantity);
+        bool priceEquality = (this.Price == newOrder.Price);
+        bool deliveryDateEquality = (this.DeliveryDate == newOrder.DeliveryDate);
+        return (idEquality && titleEquality && descriptionEquality && quantityEquality && priceEquality && deliveryDateEquality);
       }
     }
 
@@ -80,6 +85,8 @@ namespace VendorTracker.Models
       deliveryDate.Value = this.DeliveryDate;
       cmd.Parameters.Add(deliveryDate);
       cmd.ExecuteNonQuery();
+
+      ID = (int) cmd.LastInsertedId;
 
       conn.Close();
       if (conn != null)
