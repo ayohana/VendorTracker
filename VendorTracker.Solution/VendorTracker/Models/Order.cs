@@ -138,7 +138,39 @@ namespace VendorTracker.Models
 
     public static Order Find(int searchID)
     {
-      return new Order("placeholder title", "placeholder desc", 1, 1, new DateTime(2020, 4, 1));
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM orders WHERE id = @thisID;";
+      MySqlParameter thisID = new MySqlParameter();
+      thisID.ParameterName = "@thisID";
+      thisID.Value = searchID;
+      cmd.Parameters.Add(thisID);
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      int orderID = 0;
+      string orderTitle = "";
+      string orderDesc = "";
+      int orderQuantity = 0;
+      int orderPrice = 0;
+      DateTime orderDeliveryDate = new DateTime();
+      while(rdr.Read())
+      {
+        orderID = rdr.GetInt32(0);
+        orderTitle = rdr.GetString(1);
+        orderDesc = rdr.GetString(2);
+        orderQuantity = rdr.GetInt32(3);
+        orderPrice = rdr.GetInt32(4);
+        orderDeliveryDate = rdr.GetDateTime(5);
+      }
+      Order foundOrder = new Order(orderID, orderTitle, orderDesc, orderQuantity, orderPrice, orderDeliveryDate);
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+
+      return foundOrder;
     }
     
   }

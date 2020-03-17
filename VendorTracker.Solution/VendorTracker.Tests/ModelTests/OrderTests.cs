@@ -110,9 +110,8 @@ namespace VendorTracker.Tests
       Assert.AreEqual(deliveryDate, result);
     }
 
-    [Ignore]
     [TestMethod]
-    public void GetID_ReturnsOrderID_Int()
+    public void GetID_ReturnsOrderIDfromDatabase_Int()
     {
       string title1 = "One-time purchase";
       string description1 = "croissants";
@@ -123,7 +122,7 @@ namespace VendorTracker.Tests
 
       int result = newOrder1.ID;
 
-      Assert.AreEqual(1, result);
+      Assert.AreEqual(0, result);
     }
 
     [TestMethod]
@@ -135,7 +134,7 @@ namespace VendorTracker.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturnsAllOrders_OrderList()
+    public void GetAll_ReturnsAllOrdersFromDatabase_OrderList()
     {
       string title1 = "One-time purchase";
       string description1 = "croissants";
@@ -179,9 +178,8 @@ namespace VendorTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    [Ignore]
     [TestMethod]
-    public void Find_ReturnsCorrectOrder_Order()
+    public void Find_ReturnsCorrectOrderFromDatabase_Order()
     {
       string title1 = "One-time purchase";
       string description1 = "croissants";
@@ -196,7 +194,9 @@ namespace VendorTracker.Tests
       Order newOrder1 = new Order(title1, description1, quantity1, price1, deliveryDate1);
       Order newOrder2 = new Order(title2, description2, quantity2, price2, deliveryDate2);
 
-      Order result = Order.Find(2);
+      newOrder1.Save();
+      newOrder2.Save();
+      Order result = Order.Find(newOrder2.ID);
 
       Assert.AreEqual(newOrder2, result);
     }
